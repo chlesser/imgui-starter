@@ -1,0 +1,4 @@
+[ Copy "Hello, world!" to clipboard ]
+[ Options ]
+[ Options ]
+[ Copy "Hello, world!" to clipboard ]

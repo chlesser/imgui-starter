@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hydri\OneDrive\Documents\GitHub\imgui-starter\out\build\default\CMakeFiles\085b1c07bbf11b2cbfc77a6f74ac31f8\Nightly.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Users\hydri\OneDrive\Documents\GitHub\imgui-starter\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Users\hydri\OneDrive\Documents\GitHub\imgui-starter\out\build\default\CMakeFiles\Nightly" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{07F3307E-8DF2-34FE-94F0-A62166240B97}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+C:/Users/hydri/OneDrive/Documents/GitHub/imgui-starter/out/build/default/CMakeFiles/Experimental.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/imgui-starter/out/build/default/CMakeFiles/Nightly.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/imgui-starter/out/build/default/CMakeFiles/Continuous.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/imgui-starter/out/build/default/CMakeFiles/NightlyMemoryCheck.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/imgui-starter/out/build/default/CMakeFiles/demo.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/imgui-starter/out/build/default/CMakeFiles/PACKAGE.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/imgui-starter/out/build/default/CMakeFiles/RUN_TESTS.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/imgui-starter/out/build/default/CMakeFiles/ALL_BUILD.dir
+C:/Users/hydri/OneDrive/Documents/GitHub/imgui-starter/out/build/default/CMakeFiles/ZERO_CHECK.dir

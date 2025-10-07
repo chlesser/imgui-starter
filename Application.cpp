@@ -24,9 +24,11 @@ namespace ClassGame {
         //
         void RenderGame() 
         {
+            //general setup
             ImGui::DockSpaceOverViewport();
             ImGui::ShowDemoWindow();
 
+            // LOG DEMO
             ImGui::Begin("ImGui Log Demo");
             ImGui::LogButtons();
 
@@ -37,6 +39,31 @@ namespace ClassGame {
                 ImGui::LogFinish();
             }
             ImGui::End();
+
+            // GAME LOG
+            ImGui::Begin("Game Log");
+
+            //BUTTONS
+            if(ImGui::Button("Options"))
+                true;
+            ImGui::SameLine();
+            if(ImGui::Button("Clear"))
+                true;
+            ImGui::SameLine();
+            if(ImGui::Button("Test Info"))
+                true;
+            ImGui::SameLine();
+            if(ImGui::Button("Test Warning"))
+                true;
+            ImGui::SameLine();
+            if(ImGui::Button("Test Error"))
+                true;
+            ImGui::Separator();
+            ImGui::Text("Game Log:");
+
+            
+            ImGui::End();
+            // GAME CONTROL
         }
 
         //
