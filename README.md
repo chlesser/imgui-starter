@@ -1,10 +1,23 @@
-# imgui-starter
+# ImGui Logger
+Charles Lesser
 
-Using the provided code provided here you have a base Dear IMGUI project for Windows and macOS. There is a basic CMakefile in this project that includes the necessary files to create an application that brings up just a basic screen.
+This logger was made in C++ using the Dear ImGui library. It is entirely contained within Application.cpp as a struct.
+It was created for the CMPM123 class at UC Santa Cruz, using a framework from THE Graeme Devine.
 
-You must add a logging system to this code that you will be using THROUGHOUT the quarter. This logging system should do two things.
+## Features
+This assignment initially details 4 requirements aside from modification of the README, but I added in additional features that I felt would be helpful. They are as follows:
+- [REQUIRED] Logs to console
+- [REQUIRED] Logs to file
+- [REQUIRED] Levels of Logging (Info, Warning, Error, Etc)
+- [REQUIRED] Can filter by logging level
+- Filters by text input
+- Console for entry of commands
+- Logs to clipboard
 
-It should be able to log to a Dear IMGUI debug console
-It should also log its output to a file.
-
-For the submission, make a branch of this repo and submit a new GitHub URL
+## Method
+Learning ImGui was difficult, as I could not access the documentation on the wiki page. I designed my program with the following methods:
+- Investigating the examples in imgui_demo.cpp, and utilizing these functions when able (I commented these instances when possible).
+- Investigating standard functions in imgui.cpp
+- Using the C++ standard library for structures like va_list.
+- Researching on stack overflow (largely unhelpful, but interesting).
+- Debugging with friends (I did this was with the console output).
