@@ -1,6 +1,7 @@
 #include "Application.h"
 #include "imgui/imgui.h"
 #include <string>
+#include <iostream>
 
 namespace ClassGame {
         //
@@ -26,10 +27,10 @@ namespace ClassGame {
 
 
         enum MessageType {
-            EMPTY,
             INFO,
             WARNING,
-            ERROR
+            ERROR,
+            COMMAND
         }; 
 
         struct logger { // this code was mostly taken from imgui_demo.cpp.
@@ -39,10 +40,12 @@ namespace ClassGame {
             ImVector<MessageType>   lineTypes;
             MessageType             currentType;
             bool                    autoScroll;
+            char                    InputBuf[256];
 
             logger() {
                 autoScroll = true;
-                currentType = EMPTY;
+                currentType = INFO;
+                memset(InputBuf, 0, sizeof(InputBuf));
                 Clear();
             }
             void Clear() { //reset
@@ -51,6 +54,13 @@ namespace ClassGame {
                 lineOffsets.push_back(0);
                 lineTypes.clear();
             }
+            static void  Strtrim(char* s) //this is a surprise tool that will help us later
+            {
+                char* str_end = s + strlen(s);
+                while (str_end > s && str_end[-1] == ' ')
+                str_end--;
+                *str_end = 0;
+            } 
             ImVec4 MessageTypeToColor(MessageType type) { //doing this in a seprate function so I can change if I want to easily!
                 switch (type) {
                 case INFO:
@@ -80,6 +90,12 @@ namespace ClassGame {
                 stringConvert.insert(0, "[" + std::to_string(ImGui::GetTime()) + "] [ERROR] ");
                 stringConvert.append("\n");
                 AddLog(ERROR, stringConvert.c_str());
+            }
+            void logCommand(const char* fmt, ...) IM_FMTARGS(2) {
+                std::string stringConvert = fmt;
+                stringConvert.insert(0, "[" + std::to_string(ImGui::GetTime()) + "] [COMMAND] ");
+                stringConvert.append("\n");
+                AddLog(COMMAND, stringConvert.c_str());
             }
             void logWarning(const char* fmt, ...) IM_FMTARGS(2) {
                 std::string stringConvert = fmt;
@@ -123,7 +139,8 @@ namespace ClassGame {
                 filter.Draw("Filter", -100.0f);
                 ImGui::Separator();
 
-                ImGui::BeginChild("scrolling", ImVec2(0, 0), false, ImGuiWindowFlags_HorizontalScrollbar);
+                const float footer_height_to_reserve = ImGui::GetStyle().ItemSpacing.y + ImGui::GetFrameHeightWithSpacing(); // 1 separator, 1 input text
+                ImGui::BeginChild("scrolling", ImVec2(0, -footer_height_to_reserve), false, ImGuiWindowFlags_HorizontalScrollbar);
 
                 //text display
                 const char* buf_begin = buf.begin();
@@ -146,9 +163,29 @@ namespace ClassGame {
                     ImGui::SetScrollHereY(1.0f);
 
                 ImGui::EndChild();
+                ImGui::Separator();
+
+                // Command-line
+                
+                ImGuiInputTextFlags input_text_flags = ImGuiInputTextFlags_EnterReturnsTrue | ImGuiInputTextFlags_EscapeClearsAll;
+                if (ImGui::InputText("Input", InputBuf, IM_ARRAYSIZE(InputBuf), input_text_flags))
+                {
+                    char* s = InputBuf;
+                    Strtrim(s);
+                    if (s[0])
+                        ExecCommand(s);
+                    strcpy(s, "");
+                }
+
+                // Auto-focus on window apparition
+                ImGui::SetItemDefaultFocus();
+
                 ImGui::End();
             }
-            
+            void    ExecCommand(const char* command_line)
+            {
+                logCommand(command_line);
+            }
         };
         void RenderGame() 
         {
