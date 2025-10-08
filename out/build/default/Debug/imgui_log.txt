@@ -1,1 +1,29 @@
 [ Copy "Hello, world!" to clipboard ]
+[ Log To Clipboard ]
+--------------------------------
+
+[ Options ] [ Message Types ] [ Clear ] { } Filter
+--------------------------------
+[12.723857] [INFO] Testing a simple Info Message!
+
+[13.084886] [ERROR] Testing a simple Error Message!
+
+[13.390195] [WARNING] Testing a simple Warning Message!
+
+--------------------------------
+
+{ } Console
+[ Log To Clipboard ]
+--------------------------------
+
+[ Options ] [ Message Types ] [ Clear ] { } Filter
+--------------------------------
+[12.723857] [INFO] Testing a simple Info Message!
+
+[13.084886] [ERROR] Testing a simple Error Message!
+
+[13.390195] [WARNING] Testing a simple Warning Message!
+
+--------------------------------
+
+{ } Console
