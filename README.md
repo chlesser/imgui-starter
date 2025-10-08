@@ -1,7 +1,7 @@
 # ImGui Logger
 Charles Lesser
 
-This logger was made in C++ using the Dear ImGui library. It is entirely contained within Application.cpp as a struct.
+This logger was made in C++ using the Dear ImGui library, on Windows 11. It is almost entirely contained within Application.cpp as a struct.
 It was created for the CMPM123 class at UC Santa Cruz, using a framework from THE Graeme Devine.
 
 ## Features
